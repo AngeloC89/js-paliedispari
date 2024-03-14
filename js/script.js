@@ -52,7 +52,7 @@ if (num > 5 || num < 1) {
 
 } else {
     //verifico anche la scelta tra pari e dispari
-    let oddEven = prompt(('scrivi pari o dispari').toLowerCase);
+    let oddEven = prompt('scrivi pari o dispari');
     if ((oddEven !== 'pari') && (oddEven !== 'dispari')) {
         console.log('valore inserito non valido.')
         
@@ -79,9 +79,7 @@ function getRndInteger(min, max) {
 
 
 
-function getRndInteger(min, max) {
-    return Math.floor(Math.random() * (max - min + 1)) + min;
-}
+
 
 
 
