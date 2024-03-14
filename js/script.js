@@ -12,11 +12,23 @@ Dichiariamo chi ha vinto.*/
 
 
 
-let parola = (prompt('scrivi una parola:'));
-
-
+let word = (prompt('scrivi una parola:'));
 
 function palindromeCheck(string) {
 
+     if(string.toLowerCase().split('').reverse().join('') === string.toLowerCase()){
     
-}
+      return console.log('palindroma')
+
+    } else { console.log('not palindrome')
+
+    }}
+
+
+palindromeCheck(word);
+
+
+/***************************** Pari e Dispari********************** */
+
+
+
