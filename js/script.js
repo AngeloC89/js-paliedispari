@@ -29,22 +29,30 @@ palindromeCheck(word);
 
 
 /***************************** Pari e Dispari ********************** */
-
-//scrivo le variabili che mi serviranno
+//scrico solo le varibili che servono in questa fase
 let num = parseInt(prompt('scegli un numero da 1 a 5:'));
-let oddEven = prompt('scrivi pari o dispari');
-let pcNum = getRndInteger(1, 5);
-console.log('numero scelto dal PC', pcNum);
-console.log('numero scelto dall\'utente', num)
-console.log('scelta utente:', oddEven);
-let sum = num + pcNum;
-console.log('la somma è', sum);
 
-   //dico al programma che la scelta dell'utente deve essere pari o dispari
+let pcNum = getRndInteger(1, 5);
+
+let sum = num + pcNum;
+
+// effettuo una verifica del numero inserito 
+if (num > 5 || num < 1) {
+    console.log('Valore non valido');
+   
+
+} else {
+    //verifico anche la scelta tra pari e dispari
+    let oddEven = prompt('scrivi pari o dispari');
     if ((oddEven !== 'pari') && (oddEven !== 'dispari')) {
         console.log('valore inserito non valido.')
+        
     } else {
-//se òa scelte è valida prosegue con il confronto
+        //solo nel caso le verifiche siano andate a buon fine allora il programma effettua il confronto e stampa il risultato
+        console.log('numero scelto dal PC', pcNum);
+        console.log('numero scelto dall\'utente', num)
+        console.log('la somma è', sum);
+        console.log('scelta utente:', oddEven);
         if ((sum % 2 === 0 && oddEven === 'pari') || (sum % 2 !== 0 && oddEven === 'dispari')) {
 
             console.log('Hai vinto!');
@@ -53,7 +61,13 @@ console.log('la somma è', sum);
             console.log('Hai perso!');
         }
     
-};
+}};
+
+//funzione per numeri random
+function getRndInteger(min, max) {
+    return Math.floor(Math.random() * (max - min + 1)) + min;
+}
+
 
 
 function getRndInteger(min, max) {
