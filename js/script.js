@@ -28,7 +28,16 @@ function palindromeCheck(string) {
 palindromeCheck(word);
 
 
+
+
+
+
 /***************************** Pari e Dispari ********************** */
+
+
+
+
+
 //scrico solo le varibili che servono in questa fase
 let num = parseInt(prompt('scegli un numero da 1 a 5:'));
 
@@ -43,7 +52,7 @@ if (num > 5 || num < 1) {
 
 } else {
     //verifico anche la scelta tra pari e dispari
-    let oddEven = prompt('scrivi pari o dispari');
+    let oddEven = prompt(('scrivi pari o dispari').toLowerCase);
     if ((oddEven !== 'pari') && (oddEven !== 'dispari')) {
         console.log('valore inserito non valido.')
         
