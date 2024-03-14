@@ -46,7 +46,7 @@ let num = parseInt(prompt('scegli un numero da 1 a 5:'));
 let pcNum = getRndInteger(1, 5);
 
 let sum = num + pcNum;
-
+let oddOrEven = checkEvenOdd(sum);
 // effettuo una verifica del numero inserito 
 if (num > 5 || num < 1) {
     console.log('Valore non valido');
@@ -59,32 +59,31 @@ if (num > 5 || num < 1) {
         console.log('valore inserito non valido.')
 
     } else {
-        checkEvenOdd(sum);
+        oddOrEven;
         console.log('numero scelto dal PC', pcNum);
         console.log('numero scelto dall\'utente', num)
         console.log('la somma è', sum);
         console.log('scelta utente:', oddEven);
-        if (checkEvenOdd(sum) === oddEven) {
-            
-                    console.log('hai vinto!!');
+        if (oddOrEven === oddEven) {
+
+            console.log('hai vinto!!');
         } else {
             console.log('hai perso!!!');
         }
 
-    
-}};
+
+    }
+};
 
 
 
 function checkEvenOdd(number) {
     if (number % 2 === 0) {
-     return number = ('pari');
+      return 'pari';
+    } else {
+      return 'dispari';
     }
-    else {
-        number = ('dispari');
-    }
-}
-
+  }
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
