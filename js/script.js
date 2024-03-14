@@ -52,7 +52,7 @@ if (num > 5 || num < 1) {
 
 } else {
     //verifico anche la scelta tra pari e dispari
-    let oddEven = prompt('scrivi pari o dispari');
+    let oddEven = prompt('scrivi pari o dispari').toLowerCase();
     if ((oddEven !== 'pari') && (oddEven !== 'dispari')) {
         console.log('valore inserito non valido.')
         
