@@ -15,14 +15,16 @@ Dichiariamo chi ha vinto.*/
 let word = (prompt('scrivi una parola:'));
 
 function palindromeCheck(string) {
-//toLowerCase permette al programma di leggere anche in caso di maiuscole - split scompone la parola- reverse la gira e join la ricompone.
-     if(string.toLowerCase().split('').reverse().join('') === string.toLowerCase()){
-    
-      return console.log('palindroma')
+    //toLowerCase permette al programma di leggere anche in caso di maiuscole - split scompone la parola- reverse la gira e join la ricompone.
+    if (string.toLowerCase().split('').reverse().join('') === string.toLowerCase()) {
 
-    } else { console.log('not palindrome')
+        return console.log('palindroma')
 
-    }}
+    } else {
+        console.log('not palindrome')
+
+    }
+}
 
 // abbiamo applicato la funzione alla variabile word...
 palindromeCheck(word);
@@ -48,39 +50,42 @@ let sum = num + pcNum;
 // effettuo una verifica del numero inserito 
 if (num > 5 || num < 1) {
     console.log('Valore non valido');
-   
+
 
 } else {
     //verifico anche la scelta tra pari e dispari
-    let oddEven = prompt('scrivi pari o dispari').toLowerCase();
+    let oddEven = prompt('scrivi pari o dispari');
     if ((oddEven !== 'pari') && (oddEven !== 'dispari')) {
         console.log('valore inserito non valido.')
-        
+
     } else {
-        //solo nel caso le verifiche siano andate a buon fine allora il programma effettua il confronto e stampa il risultato
+        checkEvenOdd(sum);
         console.log('numero scelto dal PC', pcNum);
         console.log('numero scelto dall\'utente', num)
         console.log('la somma è', sum);
         console.log('scelta utente:', oddEven);
-        if ((sum % 2 === 0 && oddEven === 'pari') || (sum % 2 !== 0 && oddEven === 'dispari')) {
-
-            console.log('Hai vinto!');
+        if (checkEvenOdd(sum) === oddEven) {
+            
+                    console.log('hai vinto!!');
         } else {
-
-            console.log('Hai perso!');
+            console.log('hai perso!!!');
         }
+
     
 }};
 
-//funzione per numeri random
+
+
+function checkEvenOdd(number) {
+    if (number % 2 === 0) {
+     return number = ('pari');
+    }
+    else {
+        number = ('dispari');
+    }
+}
+
 function getRndInteger(min, max) {
     return Math.floor(Math.random() * (max - min + 1)) + min;
 }
-
-
-
-
-
-
-
 
